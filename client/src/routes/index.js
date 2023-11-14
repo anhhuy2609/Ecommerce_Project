@@ -8,14 +8,14 @@ import Login from '~/pages/public/login';
 
 const publicRoutes = [
     { path: config.home, page: Home },
-    { path: config.login, page: Login, layout: null},
+    { path: config.login, page: Login, layout: null },
 ];
 
 const privateRoutes = [
     { path: config.admin, page: Dashboard },
-    { path: config.product, page: Product },
-    { path: config.order, page: Order },
-    { path: config.home, page: User },
+    { path: config.manage_product, page: Product },
+    { path: config.manage_order, page: Order },
+    { path: config.manage_user, page: User },
 ];
 
 export { publicRoutes, privateRoutes };

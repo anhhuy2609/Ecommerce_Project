@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react';
+// import { useState } from 'react';
+
+import { Fragment } from 'react';
 import { privateRoutes, publicRoutes } from './routes';
 import { Routes, Route } from 'react-router-dom';
-import DefaultLayout from './layouts/public/DefaultLayout';
-import AdminLayout from './layouts/admin/AdminLayout';
+import DefaultLayout from '~/layouts/public/DefaultLayout';
+import AdminLayout from '~/layouts/admin/AdminLayout';
 
 function App() {
     return (
@@ -30,20 +32,20 @@ function App() {
                 })}
                 {privateRoutes.map((route, index) => {
                     const Page = route.page;
-                    let Layout = AdminLayout;
+                    let LayoutAdmin = AdminLayout;
                     if (route.layout) {
-                        Layout = route.layout;
+                        LayoutAdmin = route.layout;
                     } else if (route.layout === null) {
-                        Layout = Fragment;
+                        LayoutAdmin = Fragment;
                     }
                     return (
                         <Route
                             key={index}
                             path={route.path}
                             element={
-                                <Layout>
+                                <LayoutAdmin>
                                     <Page />
-                                </Layout>
+                                </LayoutAdmin>
                             }
                         />
                     );
